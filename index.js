@@ -21,8 +21,6 @@ module.exports = robot => {
       description: 'Checking if repo has a LICENSE',
     });
 
-    console.log('context is?', context);
-
     async function hasLicense() {
       try {
         const res = await context.github.repos.getContent(

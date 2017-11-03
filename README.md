@@ -1,6 +1,6 @@
 # probot-app-license
 
-> a GitHub App built with [probot](https://github.com/probot/probot) that 
+> a GitHub App built with [probot](https://github.com/probot/probot) that validates that the project has a LICENSE file in the top level of the source tree.
 
 ## Setup
 
