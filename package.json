@@ -7,23 +7,21 @@
   "repository": "https://github.com/uber-web/probot-app-license.git",
   "scripts": {
     "start": "probot run ./index.js",
-    "test": "jest && standard"
+    "test": "npm run lint && jest",
+    "lint": "eslint ."
   },
   "dependencies": {
     "probot": "^3.0.0"
   },
   "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-plugin-prettier": "^2.3.1",
     "jest": "^21.2.1",
     "localtunnel": "^1.8.2",
-    "standard": "^10.0.3"
+    "prettier": "^1.7.4"
   },
   "engines": {
     "node": ">= 7.7.0",
     "npm": ">= 4.0.0"
-  },
-  "standard": {
-    "env": [
-      "jest"
-    ]
   }
 }

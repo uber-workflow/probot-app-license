@@ -33,7 +33,7 @@ module.exports = robot => {
       }
     }
 
-    const status = await hasLicense()
+    const status = (await hasLicense())
       ? {
           state: 'success',
           description: 'Repo has a LICENSE file',
