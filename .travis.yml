@@ -1,6 +1,21 @@
+dist: trusty
 sudo: false
 language: node_js
-node_js:
-  - "7.7.1"
-notifications:
-  disabled: true
+node_js: 8.9.0
+before_install:
+- curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
+- export PATH=$HOME/.yarn/bin:$PATH
+- yarn global add greenkeeper-lockfile@1
+cache:
+  yarn: true
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+deploy:
+  provider: npm
+  email: kevingrandon@yahoo.com
+  api_key:
+    secure: BnLVtn9TKdkgXo2gdyZ5nZHAYTvZtVrEbtRjJzFmHv7qjqYk158N06HVUmpf/OcFpGJbWkExvqZAosxfQyWqoNa9sXSIzCWUQrf3xXzaV9ETydj8BTYo2cT08o7HCBlQ5EKlTwLDBakbS0cuiCPjpBK+Oo9K9kUMQakZVZ4QWckPLazU+Ux3O7Q/LaAcyx8Pi91URI2WF353Y4sHs0l3kP4c5Wzhm6lirFbWUBDO6rw6jdEki4pVi3Tk5LNZj/o3PfNjJQ1sSdbAS78ka7XrxRY1Vtrzu9hRtILuYWVA5CQGVpEd9i8TLi1FNShBQHi7PW9+KMU/oDmZe4dEAudpSihInlD7cZIyEMaW1wLNB8946kLsIUoBd+fb1wwC29WFxBcxYlBq6fcBImM8y9Zwopc8QJe3Z1dKK6tSPFEi9DuQIZaZ96yRF8vl+GRP/ByxAzh1ZYwjIHFtpuBorFOoiTIxNlQOHyV5aFhiVFof9plq2cXda1XN3PCE4Re9fstSYOgF7w66GxMTM9i4GKTfVkDRLI2jTawH0AH1HTOCoKuP7xvfdCrpSrQPTuNd+PDQnGueAoD6Li/uNFu5LkImxxnbu2/Gua9FRiXGN12Zh7e3PSXZQa9rp8HIoq2XENXbEpMRqKtlVbr5IHMAjDhEHYFgEBYQNEOyUDq7Bva6/1s=
+  on:
+    tags: true
+    repo: uber-web/probot-app-license
+repo: uber-web/probot-app-license
