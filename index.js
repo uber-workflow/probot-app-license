@@ -23,7 +23,8 @@ module.exports = robot => {
       try {
         const res = await context.github.repos.getContent(
           context.repo({
-            path: `LICENSE`,
+            path: 'LICENSE',
+            ref: pr.head.sha,
           }),
         );
         const content = Buffer.from(res.data.content, 'base64').toString();
