@@ -14,10 +14,10 @@ steps:
         run: probot-app-license
     agents:
       queue: workers
-  - name: ':jest:'
-    command: npm run jest
-    plugins:
-      'docker-compose#v1.5.2':
-        run: probot-app-license
-    agents:
-      queue: workers
+  # - name: ':jest:'
+  #   command: npm run jest
+  #   plugins:
+  #     'docker-compose#v1.5.2':
+  #       run: probot-app-license
+  #   agents:
+  #     queue: workers
