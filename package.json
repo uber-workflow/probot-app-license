@@ -12,7 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "probot": "6.2.0"
+    "probot": "7.0.1"
   },
   "devDependencies": {
     "eslint": "5.2.0",
